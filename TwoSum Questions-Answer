@@ -1,0 +1,41 @@
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) 
+    {
+      int[] outputNums = { };
+      int outputSum = 0;
+      for (int itemX = 0; itemX < nums.Length; itemX++)
+      {
+          for (int itemY = itemX; itemY < nums.Length; itemY++)
+          {
+              outputSum = nums[itemX] + nums[itemY];
+              if (outputSum == target && itemX != itemY)
+              {
+                  outputNums = [itemX, itemY];
+              }
+          }
+      }
+      return outputNums;
+    }
+    public void Main()
+    {
+        int[] nums = { 2, 7, 11, 15 };
+        int target = 9;
+        int[] numsTwo = { 3,2,4 };
+        int targetTwo = 6;
+        int[] numsThree = { 3,3 };
+        int targetThree = 6;
+        EkranaYazdir(TwoSum(nums, target));
+        EkranaYazdir(TwoSum(numsTwo, targetTwo));
+        EkranaYazdir(TwoSum(numsThree, targetThree));
+    }
+    public static void EkranaYazdir(int[] outputNums) 
+    {
+        int[] output = outputNums;
+        foreach (var item in output)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
+}
+    
