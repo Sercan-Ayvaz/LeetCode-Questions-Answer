@@ -46,11 +46,11 @@ public class Solution {
         int targetTwo = 6;
         int[] numsThree = { 3,3 };
         int targetThree = 6;
-        EkranaYazdir(TwoSum(nums, target));
-        EkranaYazdir(TwoSum(numsTwo, targetTwo));
-        EkranaYazdir(TwoSum(numsThree, targetThree));
+        PrintScreen(TwoSum(nums, target));
+        PrintScreen(TwoSum(numsTwo, targetTwo));
+        PrintScreen(TwoSum(numsThree, targetThree));
     }
-    public static void EkranaYazdir(int[] outputNums) 
+    public static void PrintScreen(int[] outputNums) 
     {
         int[] output = outputNums;
         foreach (var item in output)
