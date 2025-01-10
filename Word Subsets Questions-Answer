@@ -33,8 +33,9 @@ namespace ConsoleApp1
             string[] wordsChar = { "e", "o" };
             string[] wordsTwo = { "amazon", "apple", "facebook", "google", "leetcode" };
             string[] wordsCharTwo = { "l", "e" };
-            ScreenPrint(WordSubsets(words, wordsChar));
-            ScreenPrint(WordSubsets(wordsTwo, wordsCharTwo));
+            Solution solution = new Solution();
+            ScreenPrint(solution.WordSubsets(words, wordsChar));
+            ScreenPrint(solution.WordSubsets(wordsTwo, wordsCharTwo));
         }
         public static IList<string> WordSubsets(string[] words1, string[] words2)
         {
