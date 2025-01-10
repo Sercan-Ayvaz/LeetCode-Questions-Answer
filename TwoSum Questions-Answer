@@ -1,5 +1,5 @@
 public class Solution {
-    public int[] TwoSum(int[] nums, int target) 
+    public static int[] TwoSum(int[] nums, int target) 
     {
       int[] outputNums = { };
       int outputSum = 0;
@@ -16,7 +16,7 @@ public class Solution {
       }
       return outputNums;
     }
-    public void Main()
+    public static void Main()
     {
         int[] nums = { 2, 7, 11, 15 };
         int target = 9;
