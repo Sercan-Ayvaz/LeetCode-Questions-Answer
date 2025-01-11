@@ -1,4 +1,5 @@
 /*
+-----Unknow Two Lists Sum-----
  How to write a console application that adds the numbers in two lists of unknown length and outputs them to the screen.
  */
 
@@ -11,8 +12,8 @@ public class Solution
 {
     static void Main(string[] args)
     {
-        List<int> numbers = new List<int>() { 1,0,0,5,6,8,9,8,5,6,9,8,7,5,6,9,8,7,4,5,6,9,8 };
-        List<int> numbersTwo = new List<int>() { 1,0,0,0,2,3,5,6,0,1,4,7,8,5,6,8,9,5,4,1,2 };
+        List<int> numbers = new List<int>() { 9,9,9 };
+        List<int> numbersTwo = new List<int>() { 9,9,9 };
         PrintScreen(SumTwoList(numbers, numbersTwo));
     }
     public static List<int> SumTwoList(List<int> numbers, List<int> numbersTwo)
@@ -28,29 +29,44 @@ public class Solution
         {
             numbersTwo.Insert(0, 0);
         }
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            Console.Write(numbers[i].ToString()+" ");
+        }
+        Console.WriteLine(" ");
+        for (int i = 0; i < numbersTwo.Count; i++)
+        {
+            Console.Write(numbersTwo[i].ToString()+" ");
+        }
 
-        Console.WriteLine(string.Join(" ", numbers));
-        Console.WriteLine(string.Join(" ", numbersTwo));
-
-
+        //Console.WriteLine(string.Join(" ", numbers));
+        //Console.WriteLine(string.Join(" ", numbersTwo));
+        
+        int carry = 0;
         for (int i = numbers.Count - 1; i >= 0; i--)
         {
-            int sum = numbers[i] + numbersTwo[i];
-            if (sum >= 10)
+            int total = numbers[i] + numbersTwo[i]+carry;
+            if (total >= 10)
             {
-                result.Insert(0, sum - 10);
-                if (i > 0) numbers[i - 1] += 1; 
+                result.Insert(0, total - 10);
+                carry = 1;
             }
             else
             {
-                result.Insert(0, sum);
+                result.Insert(0, total);
+                carry = 0;
             }
+        }
+        if (carry == 1)
+        {
+            result.Insert(0, carry);
         }
 
         return result;
     }
     public static void PrintScreen(List<int> result)
     {
+        Console.WriteLine(" ");
         for (int i = 0; i < result.Count; i++)
         {
             Console.Write(result[i]+" ");
